@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МЕГА ИГРА №10 (89) • Октябрь 2001 • www.mega-igra.ru</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+
+    :root {
+      --mega-red: #c8102e;
+      --mega-gold: #f4c430;
+      --mega-dark: #0f0f23;
+      --mega-blue: #1a237e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0a0a18;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 4px 4px;
+      color: #e0e0e0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #111122;
+      box-shadow: 0 0 0 8px #222244, 0 0 0 12px #c8102e;
+      border: 3px solid #f4c430;
+    }
+
+    .top-bar {
+      background: linear-gradient(#c8102e, #8b0000);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #f4c430;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .top-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-header {
+      background: #000;
+      padding: 12px 20px;
+      text-align: center;
+      border-bottom: 4px solid #f4c430;
+    }
+
+    .logo {
+      font-family: "Press Start 2P", system-ui;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #f4c430, #fff, #f4c430);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 4px 4px 0 #c8102e;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .logo-sub {
+      font-size: 13px;
+      color: #f4c430;
+      margin-top: -6px;
+      letter-spacing: 6px;
+      font-weight: bold;
+    }
+
+    .issue-info {
+      background: #1a1a2e;
+      padding: 8px 16px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #333355;
+    }
+
+    .nav {
+      background: #1f1f35;
+      padding: 0;
+      border-bottom: 2px solid #f4c430;
+    }
+
+    .nav table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .nav td {
+      padding: 8px 14px;
+      text-align: center;
+      border-right: 1px solid #333355;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .nav td:last-child {
+      border-right: none;
+    }
+
+    .nav a {
+      color: #f4c430;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 16px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .cover-frame {
+      display: inline-block;
+      background: #222233;
+      padding: 8px;
+      border: 6px solid #f4c430;
+      box-shadow: 0 10px 0 #000, 8px 8px 0 rgba(0,0,0,0.6);
+    }
+
+    .cover-frame img {
+      display: block;
+      max-width: 620px;
+      width: 100%;
+      height: auto;
+      border: 2px solid #333;
+      image-rendering: crisp-edges;
+    }
+
+    .cover-caption {
+      background: #c8102e;
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 12px;
+      margin-top: 4px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      background: #c8102e;
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 18px 0 10px;
+      border-left: 6px solid #f4c430;
+      text-transform: uppercase;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .article-card {
+      background: #1a1a2e;
+      border: 2px solid #444466;
+      padding: 10px;
+      transition: all 0.1s;
+    }
+
+    .article-card:hover {
+      border-color: #f4c430;
+      transform: translateY(-2px);
+    }
+
+    .article-card h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: #f4c430;
+      cursor: pointer;
+    }
+
+    .article-card h3:hover {
+      text-decoration: underline;
+    }
+
+    .article-teaser {
+      font-size: 12.5px;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-size: 11px;
+      color: #fff;
+      background: #c8102e;
+      padding: 2px 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .read-more:hover {
+      background: #f4c430;
+      color: #000;
+    }
+
+    .sidebar {
+      background: #1a1a2e;
+      border: 2px solid #444466;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .sidebar h4 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: #f4c430;
+      border-bottom: 1px solid #444466;
+      padding-bottom: 4px;
+    }
+
+    .cheats-list {
+      font-family: monospace;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .ad {
+      background: repeating-linear-gradient(
+        45deg,
+        #222233,
+        #222233 8px,
+        #1a1a2e 8px,
+        #1a1a2e 16px
+      );
+      border: 3px dashed #f4c430;
+      padding: 10px;
+      margin: 14px 0;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .ad strong {
+      color: #f4c430;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .retro-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+
+    .retro-table th,
+    .retro-table td {
+      border: 1px solid #444466;
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    .retro-table th {
+      background: #1f1f35;
+      color: #f4c430;
+    }
+
+    .footer {
+      background: #000;
+      padding: 14px;
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+      border-top: 3px solid #f4c430;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #111122;
+      border: 4px solid #f4c430;
+      width: 92%;
+      max-width: 620px;
+      max-height: 80vh;
+      overflow: auto;
+      box-shadow: 0 0 0 8px #222244;
+    }
+
+    .modal-header {
+      background: #c8102e;
+      color: #fff;
+      padding: 8px 14px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-body {
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .modal-body h2 {
+      margin-top: 0;
+      color: #f4c430;
+    }
+
+    .close-btn {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .blink {
+      animation: blink 1.2s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .old-school {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .marquee {
+      background: #000;
+      color: #0f0;
+      padding: 2px 0;
+      font-size: 11px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .stat {
+      font-size: 10px;
+      background: #222233;
+      padding: 2px 6px;
+      display: inline-block;
+    }
+
+    .pixel {
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div>
+        <strong>№10 (89) • ОКТЯБРЬ 2001</strong> &nbsp;|&nbsp; 
+        <span style="color:#ffdd77">132 СТРАНИЦЫ ХИТОВ!</span>
+      </div>
+      <div>
+        ЦЕНА 60 РУБ. &nbsp;•&nbsp; 
+        <a href="#" onclick="fakeSubscribe()">ПОДПИСКА</a> &nbsp;•&nbsp; 
+        <a href="#" onclick="showGuestbook()">ГОСТЕВАЯ</a>
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-header">
+      <h1 class="logo">МЕГА ИГРА</h1>
+      <div class="logo-sub">ВСЁ ОБ ИГРАХ И НЕ ТОЛЬКО!</div>
+    </div>
+
+    <!-- Issue info -->
+    <div class="issue-info">
+      <div>
+        <strong style="color:#f4c430">www.mega-igra.ru</strong> &nbsp; 
+        <span class="stat">ОНЛАЙН С 1998</span>
+      </div>
+      <div>
+        <span style="color:#ff6666">●</span> 
+        <strong>РЕКОМЕНДОВАНО ДЛЯ PENTIUM III / 128 МБ / 3D-АКСЕЛЕРАТОР</strong>
+      </div>
+      <div style="font-size:11px; color:#888">ПОСЛЕДНЕЕ ОБНОВЛЕНИЕ: 10.10.2001</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+      <table>
+        <tr>
+          <td><a href="#" onclick="scrollToSection('news')">НОВОСТИ</a></td>
+          <td><a href="#" onclick="scrollToSection('reviews')">ОБЗОРЫ</a></td>
+          <td><a href="#" onclick="scrollToSection('previews')">ПРЕВЬЮ</a></td>
+          <td><a href="#" onclick="showCheats()">ЧИТЫ И КОДЫ</a></td>
+          <td><a href="#" onclick="scrollToSection('top10')">ТОП-10</a></td>
+          <td><a href="#" onclick="showContest()">КОНКУРСЫ</a></td>
+          <td><a href="#" onclick="fakeForum()">ФОРУМ</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="main-content">
+
+      <!-- Hero with cover -->
+      <div class="hero">
+        <div class="cover-frame">
+          <img src="cover.png" alt="Обложка МЕГА ИГРА №10 (89) Октябрь 2001" class="pixel">
+        </div>
+        <div class="cover-caption">
+          ГЛАВНЫЕ ГЕРОИ НОМЕРА: GOTHIC • GTA III • SHREK • MAX PAYNE • SILENT HILL 2 • ВЛАСТЕЛИН КОЛЕЦ
+        </div>
+      </div>
+
+      <!-- Marquee -->
+      <div class="marquee">
+        &nbsp;&nbsp;★★★★★ СРОЧНО: В ПРОДАЖЕ НОВАЯ ВИДЕОКАРТА GEFORCE 2 GTS С T&amp;L! 32 МБ — ВСЕГО 4200 РУБ. ★★★★★ ПОДПИШИСЬ НА «МЕГА ИГРА» И ПОЛУЧИ БЕСПЛАТНЫЙ ДИСК С ДЕМО ★★★★★ WINAMP 2.78 + 400 СКИНОВ — В КАЖДОМ НОМЕРЕ! ★★★★★
+      </div>
+
+      <!-- This month -->
+      <div id="reviews">
+        <div class="section-title">В ЭТОМ НОМЕРЕ — 132 СТРАНИЦЫ ЧИСТОГО АДРЕНАЛИНА!</div>
+        
+        <div class="articles-grid">
+
+          <!-- Article 1 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(0)">GOTHIC — ВОЗВРАЩЕНИЕ ЛЕГЕНДЫ!</h3>
+            <div class="article-teaser">Мы прошли игру от короля до последнего орка. Это не просто RPG. Это ЭПОС.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(0)">ЧИТАТЬ СТРАНИЦУ 24 →</a>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(1)">GTA III: СВОБОДА. ГОРОД. БЕСПРЕДЕЛ!</h3>
+            <div class="article-teaser">Liberty City. Теперь в трёх измерениях. Мы угнали всё, что движется, и даже кое-что, что не движется.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(1)">ЧИТАТЬ СТРАНИЦУ 8 →</a>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(2)">SILENT HILL 2: СТРАХ ВОЗВРАЩАЕТСЯ</h3>
+            <div class="article-teaser">Туман стал ещё гуще. Психологический хоррор, от которого вы не уснёте неделю. Плюс эксклюзивные скрины.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(2)">ЧИТАТЬ СТРАНИЦУ 16 →</a>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(3)">MAX PAYNE: БОЛЬ, ПРЕДАТЕЛЬСТВО, МЕСТЬ</h3>
+            <div class="article-teaser">Bullet time, нуар и трагедия в одном флаконе. Мы поговорили с разработчиками и выстрелили в потолок от восторга.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(3)">ЧИТАТЬ СТРАНИЦУ 32 →</a>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(4)">ШРЕК: ХИТ ГОДА! ЗЕЛЁНЫЙ, НО СВОЙ</h3>
+            <div class="article-teaser">Огр, который покорил все сердца. Игра по мультфильму DreamWorks уже в продаже. Мы проверили — смешно и неожиданно душевно.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(4)">ЧИТАТЬ СТРАНИЦУ 48 →</a>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="article-card">
+            <h3 onclick="showArticle(5)">THE LORD OF THE RINGS: БРАТСТВО КОЛЬЦА</h3>
+            <div class="article-teaser">Игра по самому ожидаемому фильму года. Эпическое приключение или просто красивые кат-сцены? Наш вердикт внутри.</div>
+            <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(5)">ЧИТАТЬ СТРАНИЦУ 56 →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Linkin Park special -->
+      <div class="article-card" style="margin-bottom:16px; background:#1f1f35">
+        <h3 onclick="showArticle(6)" style="color:#ffdd88">ИНТЕРВЬЮ: ЧЕСТЕР БЕННИНГТОН ИЗ LINKIN PARK</h3>
+        <div class="article-teaser">"Новая жизнь, новый альбом, новая боль" — эксклюзив для читателей МЕГА ИГРА. Плюс коды для скачивания треков (на момент 2001).</div>
+        <a href="#" class="read-more" onclick="event.preventDefault(); showArticle(6)">ПОЛНАЯ ВЕРСИЯ НА СТРАНИЦЕ 72 →</a>
+      </div>
+
+      <!-- Two columns: Top 10 + Ads -->
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px">
+        
+        <!-- Top 10 -->
+        <div id="top10">
+          <div class="section-title" style="font-size:13px">ТОП-10 ЛУЧШИХ RPG ОСЕНИ 2001</div>
+          <table class="retro-table">
+            <tr><th>#</th><th>ИГРА</th><th>ПЛАТФОРМА</th><th>ОЦЕНКА</th></tr>
+            <tr><td>1</td><td><strong>Gothic</strong></td><td>PC</td><td style="color:#0f0">97%</td></tr>
+            <tr><td>2</td><td>Diablo II: Lord of Destruction</td><td>PC</td><td style="color:#0f0">94%</td></tr>
+            <tr><td>3</td><td>Baldur's Gate II</td><td>PC</td><td style="color:#0f0">93%</td></tr>
+            <tr><td>4</td><td>Neverwinter Nights</td><td>PC</td><td style="color:#0f0">91%</td></tr>
+            <tr><td>5</td><td>The Elder Scrolls III: Morrowind</td><td>PC</td><td style="color:#ff0">89%</td></tr>
+            <tr><td>6</td><td>Return to Castle Wolfenstein</td><td>PC</td><td style="color:#ff0">88%</td></tr>
+            <tr><td>7</td><td>Arcanum</td><td>PC</td><td style="color:#ff0">86%</td></tr>
+            <tr><td>8</td><td>Deus Ex (переиздание)</td><td>PC</td><td style="color:#ff0">85%</td></tr>
+            <tr><td>9</td><td>Pool of Radiance: Ruins of Myth Drannor</td><td>PC</td><td style="color:#ff0">78%</td></tr>
+            <tr><td>10</td><td>Shrek (сюрприз года!)</td><td>PC / PS2</td><td style="color:#ff0">82%</td></tr>
+          </table>
+          <div style="font-size:10px;color:#888">Полный рейтинг и подробности — на 82 странице журнала</div>
+        </div>
+
+        <!-- Sidebar stuff -->
+        <div>
+          <div class="sidebar">
+            <h4>⚡ ГОРЯЧИЕ ЧИТЫ МЕСЯЦА</h4>
+            <div class="cheats-list old-school">
+              GTA III: <strong>→→</strong> GUNSGUNSGUNS<br>
+              Silent Hill 2: <strong>→→</strong> 7734 (на телефоне)<br>
+              Max Payne: <strong>→→</strong> BULLETTIME<br>
+              Gothic: <strong>→→</strong> MARVIN<br>
+              Wolfenstein: <strong>→→</strong> 1942
+            </div>
+            <div style="margin-top:8px">
+              <a href="#" onclick="showCheats()" style="font-size:11px">→ ЕЩЁ 47 ЧИТОВ ВНУТРИ</a>
+            </div>
+          </div>
+
+          <div class="ad">
+            <strong>ВИДЕОКАРТА GEFORCE 2 GTS 32MB</strong>
+            <span style="color:#ffdd77">Только 4199 руб.!</span><br>
+            <span style="font-size:10px">Идеально для Gothic и GTA III.<br>Купи до 15 октября — получи 3 бонусных диска!</span>
+          </div>
+
+          <div class="sidebar">
+            <h4>📻 СЛУШАЙ В НОМЕРЕ</h4>
+            <div style="font-size:12px">
+              Linkin Park — Crawling (эксклюзивный рингтон)<br>
+              <span style="color:#888">+ 14 новых треков для Winamp</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- More sections -->
+      <div id="previews" style="margin-top: 18px">
+        <div class="section-title">ПРЕВЬЮ СЛЕДУЮЩЕГО НОМЕРА (НОЯБРЬ 2001)</div>
+        <div class="articles-grid">
+          <div class="article-card">
+            <strong style="color:#f4c430">HALF-LIFE 2</strong><br>
+            <span style="font-size:12px">Первые скрины из Valve! Гордон возвращается. Или это уже не он?</span>
+          </div>
+          <div class="article-card">
+            <strong style="color:#f4c430">GRAND THEFT AUTO: VICE CITY</strong><br>
+            <span style="font-size:12px">Пока только слухи, но мы уже знаем — будет неон, яхты и саундтрек 80-х.</span>
+          </div>
+          <div class="article-card">
+            <strong style="color:#f4c430">XBOX — ПЕРВЫЕ ВПЕЧАТЛЕНИЯ</strong><br>
+            <span style="font-size:12px">Мы держали в руках. Да, он большой. Да, он мощный. И да, Halo выглядит просто космос.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Letters from readers -->
+      <div id="news">
+        <div class="section-title">ПИСЬМА ЧИТАТЕЛЕЙ (ЛУЧШЕЕ ИЗ ПОЧТЫ)</div>
+        <div style="background:#1a1a2e; padding:12px; border:2px solid #333355; font-size:13px">
+          <p><strong>Вася Пупкин, 14 лет, Тольятти:</strong><br>
+          «Ребята, спасибо за коды на Return to Castle Wolfenstein! Я прошёл всю игру за 4 дня на сложности "Я бог". Моя мама теперь думает, что я гений. На самом деле — вы.»</p>
+          <p><strong>Алексей "Киллер", 19 лет, Иркутск:</strong><br>
+          «Gothic — это просто вау. Я даже перестал играть в "Мор. Утопия", потому что там нет орков и квестов про "принеси мне 50 шкурок". Жду продолжения!»</p>
+          <p><strong>Катя С., 16 лет, Москва:</strong><br>
+          «Почему в вашем журнале нет статей про The Sims? Я построила дом мечты и теперь хочу чтобы все знали. Пишите про девушек-геймеров пожалуйста!»</p>
+        </div>
+      </div>
+
+      <!-- Fake ads row -->
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+        <div class="ad" style="flex:1; min-width:200px">
+          <strong>МОДЕМ 56K US ROBOTICS</strong><br>
+          <span style="font-size:11px">Скачивайте прохождения быстрее!<br>Только 890 руб. + 3 компакт-диска в подарок</span>
+        </div>
+        <div class="ad" style="flex:1; min-width:200px">
+          <strong>PS2 + 2 ДЖОЙСТИКА + GTA III</strong><br>
+          <span style="font-size:11px">Выиграйте в нашем конкурсе!<br>Подробности на стр. 15</span>
+        </div>
+        <div class="ad" style="flex:1; min-width:200px">
+          <strong>CD "1000 ИГР 2001"</strong><br>
+          <span style="font-size:11px">Всё на одном диске!<br>Пираты — в тюрьму, а мы легально ;)</span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin:20px 0 8px; font-size:11px; color:#777">
+        Лучше всего просматривать сайт в Internet Explorer 5.5 при разрешении 800×600<br>
+        <span style="color:#f4c430">Сайт работает даже на модеме 28.8 кбит/с (проверено!)</span>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      © 1998–2001 ЗАО «МЕГА ИГРА МЕДИА». Все права жёстко защищены.<br>
+      Любое копирование материалов без письменного разрешения редакции карается отбором дискет.<br>
+      <span style="color:#555">Сайт для GitHub Pages. Настоящий журнал существовал только в нашей голове (и на обложке).</span><br>
+      <span style="font-size:9px">Сделано с любовью к старой школе в 2026 году</span>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="if (event.target.id === 'modal') hideModal()">
+    <div class="modal-content" onclick="event.stopImmediatePropagation()">
+      <div class="modal-header">
+        <span id="modal-title">СТАТЬЯ</span>
+        <button class="close-btn" onclick="hideModal()">×</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- JS injected content -->
+      </div>
+      <div style="background:#1a1a2e; padding:8px 14px; font-size:10px; color:#888; border-top:2px solid #333">
+        МЕГА ИГРА №10 • 2001 • Не для коммерческого использования (шутка)
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const articles = [
+      {
+        title: "GOTHIC — ВОЗВРАЩЕНИЕ ЛЕГЕНДЫ!",
+        page: "24",
+        content: `
+          <p><strong>Мы наконец-то прошли самую ожидаемую RPG 2001 года.</strong></p>
+          <p>После нескольких месяцев слухов, скринов и обещаний, немецкая студия Piranha Bytes выкатила проект, который заставил нас забыть про сон, еду и учёбу.</p>
+          
+          <p><strong>Что нас поразило:</strong></p>
+          <ul>
+            <li>Огромный живой мир без загрузок между локациями (почти магия!)</li>
+            <li>Система прокачки, в которой ты сам решаешь, кем станешь — вором, воином или магом</li>
+            <li>Диалоги, которые реально хочется читать</li>
+            <li>Орки, которые не просто мобы, а имеют характер</li>
+          </ul>
+          
+          <p>Наша оценка: <strong style="color:#0f0">97/100</strong>. Это не просто игра. Это <em>событие</em>.</p>
+          <p style="font-size:12px;color:#888">Полное прохождение + все секреты — на диске, который идёт в комплекте с бумажным номером.</p>
+        `
+      },
+      {
+        title: "GTA III: СВОБОДА. ГОРОД. БЕСПРЕДЕЛ!",
+        page: "8",
+        content: `
+          <p><strong>Наконец-то! Трёхмерный Grand Theft Auto здесь.</strong></p>
+          <p>Liberty City выглядит так, будто его нарисовали специально, чтобы мы в нём всё сломали. И мы сломали. Много раз.</p>
+          
+          <p>Мы угоняли такси, полицейские машины, пожарные и даже танк (да, он есть). Убивали всех, кто попадался на пути, и потом с ужасом смотрели на счётчик wanted level.</p>
+          
+          <p><strong>Особенно запомнилось:</strong></p>
+          <ul>
+            <li>Свободный мир, в котором можно просто гулять и слушать радио</li>
+            <li>Миссия с "девочкой в беде" — мы прошли её 11 раз, потому что было смешно</li>
+            <li>Саундтрек, от которого мурашки</li>
+          </ul>
+          
+          <p>Вердикт редакции: <strong style="color:#0f0">95/100</strong>. Если у вас есть мощный компьютер и 128 мегабайт оперативки — бегите в магазин.</p>
+          <p style="color:#f4c430">P.S. В номере есть карта города в натуральную величину (разворачивается на 4 страницах).</p>
+        `
+      },
+      {
+        title: "SILENT HILL 2: СТРАХ ВОЗВРАЩАЕТСЯ",
+        page: "16",
+        content: `
+          <p>Мы боялись. И правильно делали.</p>
+          <p>Вторая часть культового хоррора от Konami — это уже не просто "туман и монстры". Это психологическая драма с элементами чистого кошмара.</p>
+          
+          <p>Джеймс Сандерленд приезжает в Сайлент Хилл по письму от покойной жены. То, что происходит дальше, лучше пережить самому. Мы прошли игру три раза и каждый раз находили новые детали, от которых мурашки шли по спине.</p>
+          
+          <p><strong>Наши выводы:</strong></p>
+          <ul>
+            <li>Графика на PS2 выглядит потрясающе даже в 2001-м</li>
+            <li>Саундтрек — отдельный вид искусства</li>
+            <li>Финалы (да, их несколько) — просто жесть</li>
+          </ul>
+          
+          <p>Оценка: <strong style="color:#ff0">94/100</strong>. Игра для тех, кто хочет не просто испугаться, а потом три ночи анализировать, что же это было.</p>
+        `
+      },
+      {
+        title: "MAX PAYNE: БОЛЬ, ПРЕДАТЕЛЬСТВО, МЕСТЬ",
+        page: "32",
+        content: `
+          <p>Если вы ещё не играли в Max Payne — немедленно исправляйтесь. Это не шутер. Это интерактивный нуарный роман с замедленным временем.</p>
+          
+          <p>Мы провели с Максом больше 40 часов и до сих пор не можем отойти. История про полицейского, которого подставили, потерявшего жену и ребёнка, и теперь он мстит всем и каждому — затягивает с первой минуты.</p>
+          
+          <p><strong>Что нас зацепило:</strong></p>
+          <ul>
+            <li>Bullet Time — это не просто фича, это стиль жизни</li>
+            <li>Комиксные вставки между уровнями — гениально</li>
+            <li>Диалоги, которые хочется цитировать</li>
+          </ul>
+          
+          <p>Оценка: <strong style="color:#0f0">93/100</strong>. Игра, после которой хочется надеть кожаный плащ и говорить хриплым голосом.</p>
+        `
+      },
+      {
+        title: "ШРЕК: ХИТ ГОДА! ЗЕЛЁНЫЙ, НО СВОЙ",
+        page: "48",
+        content: `
+          <p>Да, мы тоже сначала посмеялись. "Игра по мультфильму про зелёного огра? Серьёзно?"</p>
+          <p>А потом прошли. И знаете что? Это неожиданно душевно, смешно и даже немного трогательно.</p>
+          
+          <p>Игра сочетает в себе платформер, экшен и элементы RPG. Вы управляете Шреком, ослом и Фионой (в некоторых уровнях). Есть даже режим "спаси принцессу", где нужно аккуратно не разбудить дракона.</p>
+          
+          <p><strong>Плюсы:</strong></p>
+          <ul>
+            <li>Юмор из мультфильма полностью сохранён</li>
+            <li>Много скрытых отсылок для взрослых</li>
+            <li>Саундтрек — просто огонь (особенно песня Smash Mouth)</li>
+          </ul>
+          
+          <p>Оценка: <strong style="color:#ff0">82/100</strong>. Идеальная игра, чтобы поиграть с младшим братом или просто расслабиться после Gothic.</p>
+          <p style="font-size:12px">Наш совет: включайте русскую озвучку. Она лучше оригинала в некоторых моментах.</p>
+        `
+      },
+      {
+        title: "THE LORD OF THE RINGS: БРАТСТВО КОЛЬЦА — ИГРА ПО ФИЛЬМУ?",
+        page: "56",
+        content: `
+          <p>Фильм ещё даже не вышел полностью, а игра уже на прилавках. Мы взяли и проверили, стоит ли оно того.</p>
+          
+          <p>Игра от Black Label Games (ныне часть EA) пытается рассказать историю первого фильма через геймплей. Вы можете играть за Фродо, Арагорна, Леголаса и Гимли.</p>
+          
+          <p><strong>Что получилось:</strong></p>
+          <ul>
+            <li>Красивые кат-сцены с актёрами (использовали реальные съёмки)</li>
+            <li>Бои с орками — эпично и тяжело</li>
+            <li>Путешествие через Морию — просто вау</li>
+          </ul>
+          
+          <p><strong>Что не получилось:</strong></p>
+          <ul>
+            <li>Управление иногда странное</li>
+            <li>Камера любит подводить в узких местах</li>
+          </ul>
+          
+          <p>Итог: <strong style="color:#ff0">79/100</strong>. Если вы большой фанат Толкина — берите. Если просто хотите хорошую action-RPG — подождите "Властелина Колец: Две крепости" (уже в работе).</p>
+        `
+      },
+      {
+        title: "ЭКСКЛЮЗИВ: ЧЕСТЕР БЕННИНГТОН ИЗ LINKIN PARK",
+        page: "72",
+        content: `
+          <p><strong>— Честер, привет! Расскажи нашим читателям, как родилась идея альбома Hybrid Theory?</strong></p>
+          <p>— Привет, ребята из МЕГА ИГРА. Это было... больно. Мы все были на грани. Каждый трек — это кусок нашей жизни. "Crawling", "In the End", "One Step Closer" — всё это про то, как мы пытались не сойти с ума.</p>
+          
+          <p><strong>— Многие говорят, что ваш стиль — это смесь рэпа, метала и электроники. Вы согласны?</strong></p>
+          <p>— Мы просто делаем то, что чувствуем. Если это получается громко и честно — значит, мы на правильном пути. Главное — не врать себе и слушателям.</p>
+          
+          <p><strong>— Что посоветуешь российским геймерам, которые сейчас играют под твою музыку?</strong></p>
+          <p>— Играйте в Max Payne под "Crawling". Это идеальное сочетание. И не забывайте: иногда нужно просто кричать в микрофон вместе со мной.</p>
+          
+          <p style="margin-top:16px;color:#f4c430">Полная версия интервью + эксклюзивные фото группы — только в бумажном номере. Наш вердикт: Linkin Park — это саундтрек поколения.</p>
+        `
+      }
+    ];
+
+    function showArticle(index) {
+      const art = articles[index];
+      document.getElementById('modal-title').innerHTML = art.title + ' <span style="font-size:11px;opacity:0.8">стр. ' + art.page + '</span>';
+      document.getElementById('modal-body').innerHTML = art.content;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function hideModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function showCheats() {
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-title').innerHTML = 'ЧИТЫ И КОДЫ — ОКТЯБРЬ 2001';
+      document.getElementById('modal-body').innerHTML = `
+        <p style="color:#f4c430"><strong>ВНИМАНИЕ!</strong> Используйте на свой страх и риск. Мы не несём ответственности за испорченные сохранения.</p>
+        
+        <table class="retro-table" style="font-size:12px">
+          <tr><th>ИГРА</th><th>КОД / ЧИТ</th><th>ЭФФЕКТ</th></tr>
+          <tr><td>GTA III</td><td><code>GUNSGUNSGUNS</code></td><td>Все виды оружия</td></tr>
+          <tr><td>GTA III</td><td><code>IFIWEREARICHMAN</code></td><td>+1 000 000 $</td></tr>
+          <tr><td>Max Payne</td><td><code>bullettime</code></td><td>Бесконечный bullet time</td></tr>
+          <tr><td>Gothic</td><td><code>marvin</code></td><td>Режим бога + консоль</td></tr>
+          <tr><td>Silent Hill 2</td><td><code>7734</code></td><td>Набрать на телефоне в игре</td></tr>
+          <tr><td>Return to Castle Wolfenstein</td><td><code>1942</code></td><td>Все уровни открыты</td></tr>
+          <tr><td>Deus Ex</td><td><code>iamwarren</code></td><td>Режим бога</td></tr>
+          <tr><td>Diablo II</td><td><code>thereisnospoon</code></td><td>Матрица-режим</td></tr>
+        </table>
+        
+        <p style="font-size:11px">Больше 120 читов и кодов — в бумажной версии + на прилагаемом CD.</p>
+        <p><em>Редакция напоминает: читы — это как чит-лист в журнале. Полезно, но игра уже не та.</em></p>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function showContest() {
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-title').innerHTML = 'КОНКУРС: ВЫИГРАЙ SONY PLAYSTATION 2!';
+      document.getElementById('modal-body').innerHTML = `
+        <p><strong>УСЛОВИЯ КОНКУРСА (строго до 25 октября 2001):</strong></p>
+        <ol>
+          <li>Пришли нам по почте (или принеси лично в редакцию) фотографию, где ты держишь в руках журнал "МЕГА ИГРА" №10.</li>
+          <li>Напиши, какая игра 2001 года, по твоему мнению, станет классикой на 20 лет вперёд.</li>
+          <li>В письме обязательно укажи свой адрес и телефон (чтобы мы могли тебе дозвониться, когда ты выиграешь).</li>
+        </ol>
+        
+        <p><strong>Призы:</strong></p>
+        <ul>
+          <li><strong>1 место:</strong> Sony PlayStation 2 + 2 джойстика + игра GTA III</li>
+          <li><strong>2 место:</strong> Видеокарта GeForce 2 MX 400 32 МБ</li>
+          <li><strong>3-10 места:</strong> Годовая подписка на журнал + фирменная майка "Я читатель МЕГА ИГРА"</li>
+        </ul>
+        
+        <p style="background:#222233;padding:8px;font-size:12px">
+          Почтовый адрес: 125047, Москва, а/я 148, "МЕГА ИГРА", Конкурс PS2.<br>
+          E-mail: <strong>konkurs@mega-igra.ru</strong> (работает только по вторникам и четвергам)
+        </p>
+        
+        <p style="color:#f4c430;font-size:11px">В прошлом конкурсе выиграл Дима из Владивостока. Он до сих пор нам пишет благодарственные письма.</p>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function fakeSubscribe() {
+      alert('Спасибо за желание подписаться!\n\nК сожалению, в 2001 году подписка оформляется только через почту или в киоске "Роспечать".\n\nПриходите с 60 рублями и номером вашего паспорта (для отчётности).');
+    }
+
+    function fakeForum() {
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-title').innerHTML = 'ФОРУМ МЕГА-ИГРА (2001)';
+      document.getElementById('modal-body').innerHTML = `
+        <p style="color:#f4c430"><strong>ВНИМАНИЕ:</strong> Форум работает только через модем. Подключение может занять до 40 секунд.</p>
+        
+        <div style="background:#000; padding:10px; font-family:monospace; font-size:12px; margin:10px 0">
+          [10.10.2001 14:22] <span style="color:#0f0">VOVAN777</span>: Ребята, кто прошёл Gothic без читов? Я уже 3 недели на 3 главе.<br>
+          [10.10.2001 14:25] <span style="color:#0f0">ShadowHunter</span>: Без читов? Ты серьёзно? Marvin mode рулит.<br>
+          [10.10.2001 14:31] <span style="color:#0f0">Gamer2001</span>: А у кого есть коды на Max Payne? У меня кончились патроны на 3 уровне.<br>
+          [10.10.2001 14:44] <span style="color:#0f0">LinkinFan</span>: Слушаю новый альбом Linkin Park и играю в GTA. Жизнь удалась.<br>
+          [10.10.2001 15:02] <span style="color:#0f0">Admin</span>: Уважаемые пользователи! Не спамьте. Админ занят — проходит Silent Hill 2.
+        </div>
+        
+        <p><strong>Ваше сообщение:</strong></p>
+        <textarea style="width:100%; height:60px; background:#222233; color:#ddd; border:1px solid #555; font-family:monospace" placeholder="Напишите здесь... (не отправится)"></textarea>
+        <button onclick="alert('Ваше сообщение отправлено!\\n\\n...но форум 2001 года уже закрыт. Спасибо за попытку.')" style="margin-top:6px; background:#c8102e; color:#fff; border:2px solid #f4c430; padding:4px 12px; cursor:pointer">ОТПРАВИТЬ</button>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    let guestbookEntries = [
+      { name: "Костя_1987", text: "Крутой сайт! Жду новый номер уже неделю." },
+      { name: "TombRaiderLover", text: "А когда будет обзор Tomb Raider 5? Я жду с 1999 года." },
+      { name: "Павел из Питера", text: "Спасибо за читы на Wolfenstein. Мой Pentium 166 теперь летает." }
+    ];
+
+    function showGuestbook() {
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-title').innerHTML = 'ГОСТЕВАЯ КНИГА МЕГА ИГРА';
+      
+      let html = '<div style="margin-bottom:12px">';
+      guestbookEntries.forEach((e, i) => {
+        html += `<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #333"><strong style="color:#f4c430">${e.name}:</strong> ${e.text}</div>`;
+      });
+      html += '</div>';
+      
+      html += `
+        <div>
+          <strong>Оставить запись:</strong><br>
+          <input id="gb-name" placeholder="Ваше имя" style="width:140px; background:#222233; color:#ddd; border:1px solid #555; margin:4px 0; padding:3px"><br>
+          <textarea id="gb-text" placeholder="Ваше сообщение..." style="width:100%; height:50px; background:#222233; color:#ddd; border:1px solid #555; font-size:12px"></textarea><br>
+          <button onclick="addGuestbookEntry()" style="background:#c8102e; color:#fff; border:2px solid #f4c430; padding:3px 10px; cursor:pointer; margin-top:4px">ДОБАВИТЬ ЗАПИСЬ</button>
+        </div>
+      `;
+      
+      document.getElementById('modal-body').innerHTML = html;
+      modal.style.display = 'flex';
+    }
+
+    function addGuestbookEntry() {
+      const name = document.getElementById('gb-name').value.trim() || 'Аноним_' + Math.floor(Math.random()*900+100);
+      const text = document.getElementById('gb-text').value.trim();
+      
+      if (!text) {
+        alert('Напишите хоть что-нибудь! В 2001 году пустые сообщения не принимались.');
+        return;
+      }
+      
+      guestbookEntries.unshift({ name, text });
+      if (guestbookEntries.length > 6) guestbookEntries.pop();
+      
+      // Re-render
+      showGuestbook();
+      
+      // Bonus: small toast
+      setTimeout(() => {
+        const toast = document.createElement('div');
+        toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222233;border:1px solid #f4c430;color:#f4c430;padding:6px 14px;font-size:11px;z-index:100000';
+        toast.textContent = 'Спасибо! Ваша запись появится в следующем номере журнала (шутка).';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2400);
+      }, 800);
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // fallback for top10 which is inside grid
+        document.getElementById('top10').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Random retro tip on load
+    function showRetroTip() {
+      const tips = [
+        "Совет: Для лучшего качества изображения используйте 16-битный цвет!",
+        "Напоминание: Не забудьте выключить компьютер перед грозой.",
+        "Факт: Этот сайт весит меньше, чем одна 3D-модель из Gothic.",
+        "Подсказка: Нажмите F11 для полноэкранного режима (как в 2001-м).",
+        "Секрет: В номере спрятаны 3 пасхалки. Найдёте — напишите нам."
+      ];
+      // show only sometimes
+      if (Math.random() < 0.35) {
+        setTimeout(() => {
+          const tip = tips[Math.floor(Math.random() * tips.length)];
+          const bar = document.createElement('div');
+          bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#f4c430;font-size:10px;padding:3px 12px;text-align:center;border-top:2px solid #f4c430;z-index:99999';
+          bar.innerHTML = '💾 ' + tip + ' <span onclick="this.parentNode.remove()" style="cursor:pointer;float:right;padding:0 6px">×</span>';
+          document.body.appendChild(bar);
+        }, 6200);
+      }
+    }
+
+    // Fake visitor counter
+    function initVisitorCounter() {
+      const counter = Math.floor(124800 + Math.random() * 800);
+      const els = document.querySelectorAll('.stat');
+      if (els.length > 0) {
+        // we already have one, but let's enhance one of them occasionally
+      }
+      
+      // Add a small counter near logo area on first load
+      setTimeout(() => {
+        const info = document.querySelector('.issue-info');
+        if (info) {
+          const span = document.createElement('span');
+          span.style.cssText = 'margin-left:12px;font-size:10px;color:#666';
+          span.innerHTML = `| Посетителей сегодня: <strong style="color:#0f0">${counter}</strong>`;
+          info.appendChild(span);
+        }
+      }, 900);
+    }
+
+    // Keyboard easter egg
+    function initEasterEgg() {
+      let konami = '';
+      const sequence = 'arrowuparrowuparrowdownarrowdownarrowleftarrowrightarrowleftarrowrightba';
+      
+      document.addEventListener('keydown', function(e) {
+        konami += e.key.toLowerCase();
+        if (konami.length > sequence.length) konami = konami.slice(-sequence.length);
+        
+        if (konami === sequence) {
+          konami = '';
+          const body = document.body;
+          body.style.transition = 'filter 0.6s';
+          body.style.filter = 'hue-rotate(180deg) saturate(1.6)';
+          setTimeout(() => {
+            body.style.filter = '';
+            alert('Поздравляем! Вы нашли пасхалку 2001 года.\n\nВ качестве приза — вечная слава и +50 к уважению среди старых геймеров.');
+          }, 650);
+        }
+        
+        // secret: press "m" for magazine cover highlight
+        if (e.key.toLowerCase() === 'm') {
+          const cover = document.querySelector('.cover-frame');
+          if (cover) {
+            cover.style.boxShadow = '0 0 0 8px #c8102e, 0 0 30px #f4c430';
+            setTimeout(() => {
+              cover.style.boxShadow = '0 10px 0 #000, 8px 8px 0 rgba(0,0,0,0.6)';
+            }, 1200);
+          }
+        }
+      });
+      
+      // small hint in console for the curious
+      console.log('%c[МЕГА ИГРА 2001] Попробуйте набрать классический код на клавиатуре...', 'color:#555');
+    }
+
+    // Boot sequence
+    function boot() {
+      initVisitorCounter();
+      initEasterEgg();
+      showRetroTip();
+      
+      // Randomly highlight one article card
+      setTimeout(() => {
+        const cards = document.querySelectorAll('.article-card');
+        if (cards.length) {
+          const lucky = cards[Math.floor(Math.random()*cards.length)];
+          lucky.style.borderColor = '#f4c430';
+          setTimeout(() => {
+            if (lucky) lucky.style.borderColor = '#444466';
+          }, 1600);
+        }
+      }, 4500);
+      
+      // Make cover image clickable to open "full size" joke
+      const coverImg = document.querySelector('.cover-frame img');
+      if (coverImg) {
+        coverImg.style.cursor = 'pointer';
+        coverImg.title = 'Нажмите, чтобы "увеличить" (как в 2001)';
+        coverImg.addEventListener('click', () => {
+          const modal = document.getElementById('modal');
+          document.getElementById('modal-title').innerHTML = 'ОБЛОЖКА НОМЕРА (ВЫСОКОЕ РАЗРЕШЕНИЕ)';
+          document.getElementById('modal-body').innerHTML = `
+            <img src="cover.png" style="width:100%; border:2px solid #333" alt="Обложка">
+            <p style="font-size:11px; text-align:center; margin-top:8px; color:#888">
+              1200×1600 (сканировано с бумажного оригинала). <br>
+              Для печати на лазерном принтере рекомендуется 600 dpi.
+            </p>
+          `;
+          modal.style.display = 'flex';
+        });
+      }
+      
+      // Accessibility: close modal on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const m = document.getElementById('modal');
+          if (m.style.display === 'flex') hideModal();
+        }
+      });
+      
+      // Welcome console message
+      console.log('%c[МЕГА ИГРА] Сайт загружен. Добро пожаловать в 2001 год.', 'color:#f4c430');
+    }
+
+    // Start everything
+    window.onload = boot;
+  </script>
+</body>
+</html>
